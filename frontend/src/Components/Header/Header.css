@@ -4,6 +4,8 @@
   background: url("/header_img.png") no-repeat;
   background-size: contain;
   position: relative;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
 }
 
 .header-contents {
@@ -22,6 +24,7 @@
   font-weight: 500;
   color: white;
   font-size: max(4.5vw, 22px);
+  opacity: 1;
 }
 
 .header-contents p {

@@ -11,7 +11,7 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="nav-bar">
       <Link to="/">
-        <img src={assets.logo} alt="logo" className="logo" />
+        <img src={assets.logo} alt="tomato-logo" className="logo" />
       </Link>
       <ul className="navbar-menu">
         <Link
@@ -44,10 +44,10 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="logo" className="search_icon" />
+        <img src={assets.search_icon} alt="search-icon" className="search_icon" />
         <div className="navbar-search-icon">
           <Link to="/cart">
-            <img src={assets.basket_icon} alt="logo" className="basket_icon" />
+            <img src={assets.basket_icon} alt="basket-logo" className="basket_icon" />
           </Link>
           <div className={getTotalCartAmount()===0 ? "" : "dot"}></div>
         </div>

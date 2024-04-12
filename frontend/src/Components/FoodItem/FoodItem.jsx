@@ -4,43 +4,44 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
 
 const FoodItem = ({ item }) => {
-  const { id, name, price, description, image } = item;
+  const { _id, name, price, description, image } = item;
 
   const { cartItem, addToCart, removeFromCart } = useContext(StoreContext);
   return (
     <div className="food-item">
       <div className="food-item-img-container">
-        <img className="food-item-image" src={item.image} alt={item.name} />
-        {!cartItem[item._id] ? (
+        <img className="food-item-image" src={image} alt={name + " "+  _id} />
+
+        {!cartItem[_id] ? (
           <img
             className="add"
-            onClick={() => addToCart(item._id)}
+            onClick={() => addToCart(_id)}
             src={assets.add_icon_white}
-            alt=""
+            alt={name + "add-icon-white"}
           />
         ) : (
           <div className="food-item-counter">
             <img
-              onClick={() => removeFromCart(item._id)}
+              onClick={() => removeFromCart(_id)}
               src={assets.remove_icon_red}
-              alt=""
+              alt="remove-icon-red"
             />
-            <p>{cartItem[item._id]}</p>
+            <p>{cartItem[_id]}</p>
             <img
-              onClick={() => addToCart(item._id)}
+              onClick={() => addToCart(_id)}
               src={assets.add_icon_green}
-              alt=""
+              alt="add-icon-green"
             />
           </div>
         )}
       </div>
       <div className="food-item-info">
         <div className="food-item-rating">
-          <p>{item.name}</p>
-          <img src={assets.rating_starts} alt="" />
+          <p>{name}</p>
+          <img src={assets.rating_starts} alt="rating-stars" />
         </div>
-        <p className="food-item-description">{item.description}</p>
-        <p className="food-item-price">${item.price}</p>
+        <p className="food-item-description">{description}</p>
+        <h5 className="food-item-price">${price}</h5>
       </div>
     </div>
   );

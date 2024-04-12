@@ -28,7 +28,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                 src={item.menu_image}
                 alt=""
               />
-              <p>{item.menu_name}</p>
+              <h4 className="heading-h3">{item.menu_name}</h4>
             </div>
           );
         })}
